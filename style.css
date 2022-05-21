@@ -206,7 +206,6 @@ footer {
   background: var(--footer);
   width: 100%;
   text-align: center;
-  background: var(--heading);
   color: var(--footer-text);
   padding: 10px;
 }
@@ -232,6 +231,9 @@ body.dark {
   --shadow-op: 0.1;
   --border-clr: hsl(246, 45%, 69%);
   --input-txt-bg: hsl(251, 22%, 39%);
+  --footer: hsla(249, 34%, 27%, 0.575);
+  --footer-text: hsl(248, 21%, 44%);
+  --a-clr: rgb(182, 167, 223);
 
   transition: 0.2s ease-in-out;
 }
