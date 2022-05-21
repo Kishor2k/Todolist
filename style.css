@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* color variables for light mode */
+:root {
+  --main-bg: hsl(249, 98%, 75%);
+  --container-bg: hsl(255, 100%, 94%);
+  --heading: hsl(256, 57%, 42%);
+  --sub-heading: hsl(242, 44%, 62%);
+  --add-btn: hsl(261, 95%, 64%);
+  --trash-btn: hsl(0, 100%, 43%);
+  --save-btn: hsl(111, 61%, 35%);
+  --task-field: hsl(0, 0%, 100%);
+  --task-text-clr: hsl(258, 32%, 43%);
+  --padding-tb: 40px;
+  --input-br: 5px;
+  --indicator-clr: hsl(261, 100%, 87%);
+  --theme-clr: #fff;
+  --shadow-op: 0.1;
+  --border-clr: hsl(246, 58%, 57%);
+  --input-txt-bg: #fff;
+  --input-txt-clr: hsl(258, 53%, 31%);
+  --footer: hsl(249, 39%, 48%);
+  --footer-text: hsl(247, 33%, 84%);
+  --a-clr: rgb(255, 255, 255);
+}
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--main-bg);
+  padding: 20px 20px 0 20px;
+}
+
+.todo {
+  max-width: 600px;
+  min-height: 300px;
+  background: var(--container-bg);
+  padding: var(--padding-tb) clamp(10px, 1rem + 1.5vw, 40px);
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, var(--shadow-op));
+}
+/* toggle switch */
+.head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.theme-switch {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 60px;
+  height: 30px;
+  background: var(--add-btn);
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+  color: var(--theme-clr);
+}
+.indicator {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--indicator-clr);
+  position: absolute;
+  left: 32px;
+  transition: 0.2s ease-in-out;
+}
+.indicator.active {
+  left: 8px;
+}
+
+h1 {
+  color: var(--heading);
+  font-size: 32px;
+  text-align: center;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--sub-heading);
+  margin-bottom: 20px;
+}
+input {
+  border-radius: var(--input-br);
+  font-family: inherit;
+}
+input:focus {
+  outline: 1px solid var(--border-clr);
+}
+.user-input {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+}
+.input-text {
+  padding: 10px 20px;
+  border: 0;
+  outline: 0;
+  flex-grow: 1;
+  background: var(--input-txt-bg);
+  color: var(--input-txt-clr);
+}
+.error {
+  position: absolute;
+  bottom: -25px;
+  left: 10px;
+  font-size: 14px;
+  color: var(--trash-btn);
+}
+/* main */
+main {
+  margin-top: 30px;
+}
+.tasks {
+  position: relative;
+}
+.tasks {
+  margin-top: 15px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, var(--shadow-op));
+  transition: 0.3s ease-in-out;
+}
+
+.task {
+  background: var(--task-field);
+  color: var(--task-text-clr);
+  font-size: 16px;
+  outline: none;
+  border: 0;
+  padding: 8px 20px;
+  width: 100%;
+  font-family: inherit;
+}
+.actions {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  height: 100%;
+}
+
+/* buttons */
+i {
+  pointer-events: none;
+}
+button {
+  padding: 0 10px;
+  height: 100%;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: inherit;
+  border-radius: var(--input-br);
+  font-size: 20px;
+}
+button.edit {
+  color: var(--add-btn);
+}
+button.delete {
+  color: var(--trash-btn);
+  font-size: 18px;
+}
+button.edit:hover,
+button.delete:hover {
+  transform: translateY(-3px);
+}
+.tasks.deleted {
+  transform: translateX(50px);
+  opacity: 0;
+}
+button.add {
+  background: var(--add-btn);
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+button.add:hover {
+  opacity: 0.8;
+}
+button.save {
+  color: var(--save-btn);
+}
+footer {
+  margin-top: auto;
+  background: var(--footer);
+  width: 100%;
+  text-align: center;
+  background: var(--heading);
+  color: var(--footer-text);
+  padding: 10px;
+}
+footer a {
+  color: var(--a-clr);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* dark Theme */
+body.dark {
+  --main-bg: hsl(259, 66%, 11%);
+  --container-bg: hsl(257, 62%, 16%);
+  --heading: hsl(242, 38%, 66%);
+  --sub-heading: hsl(243, 18%, 45%);
+  --add-btn: hsl(261, 60%, 65%);
+  --trash-btn: hsl(0, 99%, 68%);
+  --save-btn: hsl(111, 45%, 55%);
+  --task-field: hsl(249, 34%, 27%);
+  --task-text-clr: hsl(257, 5%, 75%);
+  --indicator-clr: hsl(261, 100%, 87%);
+  --theme-clr: hsl(270, 10%, 92%);
+  --shadow-op: 0.1;
+  --border-clr: hsl(246, 45%, 69%);
+  --input-txt-bg: hsl(251, 22%, 39%);
+
+  transition: 0.2s ease-in-out;
+}
+
+body.dark .input-text::placeholder {
+  color: #fff;
+}
+body.dark .input-text {
+  color: hsl(257, 53%, 88%);
+}
+
+/* media query */
+@media screen and (max-width: 600px) {
+  .todo {
+    min-width: 300px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  button.add {
+    font-size: 14px;
+  }
+  .user-input {
+    flex-direction: column;
+  }
+  .theme-switch {
+    top: 0;
+  }
+}

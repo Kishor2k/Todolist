@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App | Kishor Karki</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <section class="todo">
+        <header>
+            <div class="head">
+                <h1>Todo List</h1>
+                <div class="theme-switch">
+                        <div class="indicator"></div>
+                        <i class="fa-solid fa-sun" class="light"></i>
+                
+                    
+                        <i class="fa-solid fa-moon" class="dark"></i>
+                   
+                </div>
+            </div>
+            <div class="user-input">
+                <input type="text" id="input-text" class="input-text" placeholder="Your tasks here...">
+                <div class="error"></div>
+                <button id="add" class="add"> <i class="fa-solid fa-plus"></i> Add</button>
+            </div>
+            
+        </header>
+    
+        <main>
+            <h2>Your Tasks</h2>
+            <div class="container">
+               
+
+                <!-- adding these elements with js -->
+               <!-- <div class="task"> -->
+                    <!-- <div class="task-content">
+                        <input type="text" class="task" value="My task is ready" readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">
+                            <i class="fa-solid fa-square-pen"></i>
+                        </button>
+                        <button class="delete">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div> -->
+                
+                
+            </div>
+        </main>
+    </section>
+    <footer>
+        <p>Designed and Coded by <a href="https://github.com/Kishor2k">Kishor Karki</a></p>
+    </footer>
+</body>
+</html>
